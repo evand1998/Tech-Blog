@@ -14,10 +14,6 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
 - [Tools](#Tools)
 - [Contact Me](#Contact-Me)
 
-## Installation
-
-No installation is necessary - see the deployed Heroku Link
-
 ## Links
 
 - [GitHub](https://github.com/evand1998/Tech-Blog)
