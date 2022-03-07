@@ -1,0 +1,32 @@
+{
+  "name": "techblog",
+  "version": "1.0.0",
+  "description": "This is a community forum Tech Blog. When opened, you are presented with a landing page that shows recent current posts. At the top you will find the navigation bar gives the user the options of the dashboard, login page or home page.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evand1998/Tech-Blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evand1998/Tech-Blog.git"
+  },
+  "homepage": "https://github.com/evand1998/Tech-Blog.git#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.2",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-handlebars": "^6.0.2",
+    "express-session": "^1.17.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.17.0"
+  },
+  "keywords": []
+}
