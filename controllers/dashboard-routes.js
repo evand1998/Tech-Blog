@@ -3,7 +3,6 @@ const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-// GET all Posts
 router.get('/', withAuth, (req, res) => {
     Post.findAll({
         where: {
@@ -27,7 +26,6 @@ router.get('/', withAuth, (req, res) => {
         ]
     })
     .then(dbPostData => {
-        // Serialize the Data before passing the Template
         const posts = dbPostData.map(post => post.get({ plain: true }));
         res.render('dashboard', { posts, loggedIn: true });
     })
@@ -36,8 +34,6 @@ router.get('/', withAuth, (req, res) => {
         res.status(500).json(err);
     });
 });
-
-// GET a Single Post
 router.get('/edit/:id', withAuth, (req, res) => {
     Post.findOne({
         where: {
@@ -64,9 +60,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
             res.status(404).json({ message: 'No Post found with this ID' });
             return;
         }
-        // Serialize the Data
         const post = dbPostData.get({ plain: true });
-        // Pass to the template
         res.render('edit-post', {
             post,
             loggedIn: req.session.loggedIn
@@ -77,9 +71,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
         res.status(500).json(err);
     });
 });
-
 router.get('/new', (req, res) => {
     res.render('new-post');
 });
-
 module.exports = router;

@@ -2,9 +2,7 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// GET ALL users
 router.get('/', (req, res) => {
-    // Access our User Model and run .findAll() method
     User.findAll({
         attributes: { exclude: ['password'] }
     })
@@ -15,7 +13,6 @@ router.get('/', (req, res) => {
         });
 });
 
-// GET User by ID
 router.get('/:id', (req, res) => {
     User.findOne({
         attributes: { exclude: ['password'] },
@@ -45,7 +42,6 @@ router.get('/:id', (req, res) => {
     });
 });
 
-// POST/CREATE a New User
 router.post('/', (req, res) => {
     User.create({
       username: req.body.username,
@@ -66,7 +62,6 @@ router.post('/', (req, res) => {
     });
   });
 
-// Login Route
 router.post('/login', (req, res) => {
     User.findOne({
       where: {
@@ -74,7 +69,6 @@ router.post('/login', (req, res) => {
       }
     })
     .then(dbUserData => {
-      //verify user
       if(!dbUserData) {
         res.status(400).json({ message: 'Username not Found' });
         return;
@@ -93,7 +87,6 @@ router.post('/login', (req, res) => {
     });
   });
 
-// Logout route
 router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
       req.session.destroy(() => {
@@ -124,7 +117,6 @@ router.put('/:id', (req, res) => {
     })
 });
 
-// DELETE a User by ID
 router.delete('/:id', (req, res) => {
     User.destroy({
         where: {

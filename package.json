@@ -1,7 +1,7 @@
 {
   "name": "techblog",
   "version": "1.0.0",
-  "description": "This is a community forum Tech Blog. When opened, you are presented with a landing page that shows recent current posts. At the top you will find the navigation bar gives the user the options of the dashboard, login page or home page.",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

@@ -6,12 +6,12 @@
             },
             "previewLimit": 50,
             "server": "localhost",
-            "port": 3001,
+            "port": 3600,
             "driver": "MySQL",
-            "name": "Tech-Blog",
+            "name": "TechBlog",
             "username": "evand1998",
             "password": "Champ1998",
-            "database": "TechBlog"
+            "database": "TechBlogdb"
         }
     ]
 }
